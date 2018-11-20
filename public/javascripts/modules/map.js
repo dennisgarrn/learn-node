@@ -7,7 +7,6 @@ const mapOptions = {
 }
 
 function loadPlaces(map, lat = 43.2, lng = -79.8) {
-    console.log('called');
     axios.get(`/api/stores/near?lat=${lat}&lng=${lng}`)
         .then(res => {
             const places = res.data;
@@ -18,7 +17,6 @@ function loadPlaces(map, lat = 43.2, lng = -79.8) {
 
             const bounds = new google.maps.LatLngBounds();
             const infoWindow = new google.maps.InfoWindow();
-
             const markers = places.map(place => {
                 const [placeLng, placeLat] = place.location.coordinates;
                 const position = { lat: placeLat, lng: placeLng };

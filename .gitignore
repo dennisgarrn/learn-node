@@ -1,0 +1,6 @@
+.idea
+.DS_STORE
+node_modules
+variables.env
+public/dist
+public/uploads
